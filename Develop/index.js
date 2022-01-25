@@ -12,8 +12,9 @@ const init = () => {
             message: "Enter title of your project:", 
         },
         {
-            type: "input", 
+            type: "list", 
             name: "license", 
+            choices: ["MIT"],
             message: "What license is this application covered under?", 
         },
         {
