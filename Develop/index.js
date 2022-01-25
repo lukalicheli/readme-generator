@@ -52,7 +52,30 @@ const init = () => {
             message: "Enter your email address:", 
         }
     ])
-}
+};
+
+// Writefile function
+const writeFile = data => {
+    fs.writeFile("README.md", data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("README.md has been created!")
+        }
+    })
+};
+
 
 // Function call to initialize app
-init();
+init().then(answers => {
+    return generateMarkdown(answers);
+})
+.then(data => {
+    return writeFile(data);
+})
+.catch(err => {
+    console.log(err);
+})
+
+

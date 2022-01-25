@@ -37,6 +37,6 @@ Github: ${data.github}
 Email: ${data.email}
 
 `;
-}
+};
 
 module.exports = generateMarkdown;
